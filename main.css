@@ -223,32 +223,42 @@ body {
 /* Wrapper */
 .wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100%;
 }
 
-/* Header */
-.header {
+/* Image Sidebar */
+.image-sidebar {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Footer */
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  padding: 4px;
-  gap: 4px;
-  font-size: 14px;
+  background-image: url("../images/background-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-.footer .footer-github {
-  height: 24px;
+.image-sidebar .logo-section {
+  display: flex;
+}
+.image-sidebar .image-credit {
+  margin-top: auto;
 }
 
 /* Main */
 .main {
+  display: flex;
+  flex-direction: column;
   flex: 1;
+}
+.main .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: auto;
+  padding: 4px;
+  gap: 4px;
+  font-size: 14px;
+}
+.main .footer .footer-github {
+  height: 24px;
 }
