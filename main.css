@@ -1,3 +1,4 @@
+/* Colors */
 /* Normalize */
 html {
   line-height: 1.5;
@@ -14,7 +15,6 @@ main {
 
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
 }
 
 hr {
@@ -217,14 +217,14 @@ body {
 
 :root {
   background-color: rgb(30, 30, 30);
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.87);
 }
 
 /* Wrapper */
 .wrapper {
   display: flex;
   flex-direction: row;
-  height: 100%;
+  min-height: 100%;
 }
 
 /* Image Sidebar */
@@ -232,33 +232,74 @@ body {
   display: flex;
   flex-direction: column;
   background-image: url("../images/background-image.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 .image-sidebar .logo-section {
   display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Major Mono Display", Helvetica, sans-serif;
+  background-color: rgba(0, 0, 0, 0.5);
+  gap: 4px;
+  margin-top: 25vh;
+  height: 100px;
 }
 .image-sidebar .image-credit {
+  color: rgba(255, 255, 255, 0.6);
   margin-top: auto;
+  padding: 4px;
+  font-size: 0.875rem;
+}
+.image-sidebar .image-credit a {
+  text-decoration: underline;
+  transition: 0.25s;
+}
+.image-sidebar .image-credit a:link, .image-sidebar .image-credit a:visited {
+  color: rgba(255, 255, 255, 0.6);
+}
+.image-sidebar .image-credit a:hover, .image-sidebar .image-credit a:active {
+  color: rgba(255, 255, 255, 0.87);
 }
 
 /* Main */
 .main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  position: relative;
   flex: 1;
+}
+.main .content-wrapper {
+  margin-bottom: 114px;
+  position: relative;
+  top: 57px;
+}
+.main h1 {
+  font-size: 1.4rem;
 }
 .main .footer {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: auto;
+  color: rgba(255, 255, 255, 0.6);
   padding: 4px;
   gap: 4px;
-  font-size: 14px;
+  font-size: 0.875rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .main .footer .footer-github {
   height: 24px;
+  opacity: 60%;
+  transition: 0.25s;
+}
+.main .footer .footer-github:hover {
+  opacity: 100%;
 }
