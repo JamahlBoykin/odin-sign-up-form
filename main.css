@@ -212,7 +212,7 @@ html, body {
 
 body {
   -webkit-font-smoothing: antialiased;
-  font-family: Helvetica, sans-serif;
+  font-family: "Roboto", Helvetica, sans-serif;
 }
 
 :root {
@@ -241,9 +241,9 @@ body {
   color: white;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-family: "Major Mono Display", "Roboto", Helvetica, sans-serif;
   font-weight: bold;
-  font-family: "Major Mono Display", Helvetica, sans-serif;
+  font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.5);
   gap: 4px;
   margin-top: 25vh;
@@ -270,17 +270,40 @@ body {
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  position: relative;
   flex: 1;
 }
+.main .spacer {
+  display: flex;
+  flex-shrink: 1;
+  flex-grow: 1;
+  max-height: calc(43px + 0.875rem);
+}
 .main .content-wrapper {
-  margin-bottom: 114px;
-  position: relative;
-  top: 57px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .main h1 {
   font-size: 1.4rem;
+}
+.main #account_form {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main #account_form h1 {
+  width: 100%;
+}
+.main #account_form .input-group {
+  display: flex;
+  flex-direction: column;
+}
+.main #account_form .input-group:nth-of-type(odd) {
+  width: 300px;
+}
+.main #account_form .input-group:nth-of-type(even) {
+  width: max(255px, 100% - 300px);
+}
+.main #account_form input {
+  max-width: 250px;
 }
 .main .footer {
   display: flex;
@@ -291,9 +314,6 @@ body {
   padding: 4px;
   gap: 4px;
   font-size: 0.875rem;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }
 .main .footer .footer-github {
   height: 24px;
