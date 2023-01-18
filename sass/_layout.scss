@@ -1,40 +1,33 @@
 @use "./abstracts" as *;
 @use "./components";
 
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Wrapper */
 
 .wrapper {
   display: flex;
-  flex-direction: row;
   min-height: 100%;
 }
 
 /* Image Sidebar */
 
 .image-sidebar {
-  display: flex;
-  flex-direction: column;
+  @extend %flex-column;
   background-image: url("../images/background-image.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  .logo-section {
-    display: flex;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Major Mono Display', $font-families;
-    font-weight: bold;
-    font-size: 2rem;
-    background-color: rgb(0 0 0 / 50%);
-    gap: 4px;
-    margin-top: 25vh;
-    height: 100px;
-  }
+  width: min(36vw, 4000px);
+  min-width: 210px;
+  z-index: 1;
 
   .image-credit {
-    color: $font-med;
+    color: $font-low;
+    text-align: center;
     margin-top: auto;
     padding: 4px;
     font-size: 0.875rem;
@@ -45,12 +38,12 @@
 
       &:link,
       &:visited {
-        color: $font-med; 
+        color: $font-low; 
       }
 
       &:hover,
       &:active {
-        color: $font-high;
+        color: $font-med;
       }
     }
   }
@@ -59,69 +52,131 @@
 /* Main */
 
 .main {
-  display: flex;
-  flex-direction: column;
+  @extend %flex-column;
   flex: 1;
 
   .spacer {
     display: flex;
     flex-shrink: 1;
     flex-grow: 1;
-    max-height: calc(43px + 0.875rem);
+    max-height: calc(43px + 16px + 0.875rem);
   }
 
   .content-wrapper {
+    @extend %flex-column;
     margin-top: auto;
     margin-bottom: auto;
+    flex: 1;
+    gap: 24px;
+
+    > * {
+      margin: 0 48px;
+    }
+  }
+
+  .top-container {
+    @extend %flex-column;
+    justify-content: flex-end;
+    position: relative;
+    flex: 1;
+    gap: 24px;
+
+    h1:first-of-type {
+      padding-top: 4px;
+    }
+
+    .logo-section {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      font-family: 'Major Mono Display', $font-families;
+      color: white;
+      background-color: rgb(0 0 0 / 50%);
+      height: clamp(64px, 11vw, 128px);
+      width: 36vw;
+      min-width: 210px;
+      z-index: 2;
+      position: absolute;
+      bottom: -24px;
+      left: min(calc(-48px - 36vw), -258px);
+  
+      .logo-text {
+        align-self: center;
+        padding-bottom: 4px;
+        font-size: clamp(35px, 5.5vw, 64px);
+      }
+    }
   }
 
   h1 {
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 3.8vw, 1.4rem);
   }
 
   #account_form {
     display: flex;
     flex-wrap: wrap;
+    background-color: mix(white, $background, 5%);
+    box-shadow: 0 2px 12px -4px black;
+    padding: 32px 0px 32px 48px;
+    margin: 0;
+    gap: 16px;
 
     h1 {
       width: 100%;
+      font-size: 1.4rem;
     }
 
     .input-group {
-      display: flex;
-      flex-direction: column;
+      @extend %flex-column;
       
       &:nth-of-type(odd) {
-        width: 300px;
+        width: $form-input-width + 32px;
       }
       
       &:nth-of-type(even) {
-        width: max(255px, calc(100% - 300px));
+        width: max($form-input-width + 16px, 100% - ($form-input-width + 32px + 16px));;
       }
     }
 
+    label {
+      letter-spacing: 4px;
+      font-size: 0.8rem;
+      color: $font-med;
+    }
+
     input {
-      max-width: 250px;
+      width: $form-input-width;
+      color: mix(white, black, 13%);;
+    }
+  }
+
+  .bottom-container {
+    @extend %flex-column;
+    flex: 1;
+    gap: 24px;
+
+    a {
+      color: $primary;
     }
   }
 
   .footer {
-    display: flex;
+    @extend %flex-column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    color: $font-med;
+    color: $font-low;
+    margin-top: auto;
     padding: 4px;
     gap: 4px;
     font-size: 0.875rem;
     
     .footer-github {
       height: 24px;
-      opacity: 60%;
+      opacity: 38%;
       transition: 0.25s;
 
       &:hover {
-        opacity: 100%;
+        opacity: 83%;
       }
     }
   }

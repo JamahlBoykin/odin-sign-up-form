@@ -1,0 +1,11 @@
+@use "./abstracts" as *;
+
+.button-primary {
+  background-color: $primary;
+  width: 12.5rem;
+  min-height: 2.5rem;
+  border-radius: 6px;
+  box-shadow: 2px 2px 12px -2px black;
+  color: mix(white, black, 13%);
+  border: none;
+}

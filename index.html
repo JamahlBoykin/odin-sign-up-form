@@ -20,18 +20,21 @@
   <body>
     <div class="wrapper">
       <div class="image-sidebar">
-        <div class="logo-section">
-          <img class="logo-image" src="./images/code-logo.svg" alt="Code logo.">
-          <p class="logo-text">code</p>
-        </div>
         <p class="image-credit">Photo by <a href="https://unsplash.com/@nugthan">Nathan Watson</a> on <a href="https://unsplash.com/photos/dA0-qxdbyyY">Unsplash</a></p>
       </div>
       
       <main class="main">
-        <div class="spacer"></div>
-        
         <div class="content-wrapper">
-          <h1>This is not a real online service!<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore deleniti magnam delectus quas repellat culpa?<br><br>Sign up <em>now</em> to get started.</h1>
+          <div class="top-container">
+            <h1>This is not a real online service!<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore deleniti magnam delectus quas repellat culpa?</h1>
+            
+            <h1>Sign up <em>now</em> to get started.</h1>
+
+            <div class="logo-section">
+              <img class="logo-image" src="./images/code-logo.svg" alt="Code logo.">
+              <p class="logo-text">code</p>
+            </div>
+          </div>
 
           <form id="account_form" action="./index.html" method="post">
             <h1>Account Information</h1>
@@ -67,19 +70,21 @@
             </div>
           </form>
 
-          <button form="account_form" type="submit">Create Account</button>
+          <div class="bottom-container">
+            <button class="button-primary" form="account_form" type="submit">Create Account</button>
 
-          <p>Already have an account? <a href="./index.html">Log in</a></p>
+            <p>Already have an account? <a href="./index.html">Log in</a></p>
+
+            <footer class="footer">
+              <a href="https://github.com/JamahlBoykin">
+                <img src="./images/github-mark-white.svg" alt="Link to the creator's GitHub profile." class="footer-github">
+              </a>
+              <p>
+                © <script>document.write(new Date().getFullYear())</script> Jamahl Boykin
+              </p>
+            </footer>
+          </div>
         </div>
-        
-        <footer class="footer">
-          <a href="https://github.com/JamahlBoykin">
-            <img src="./images/github-mark-white.svg" alt="Link to the creator's GitHub profile." class="footer-github">
-          </a>
-          <p>
-            © <script>document.write(new Date().getFullYear())</script> Jamahl Boykin
-          </p>
-        </footer>
       </main>
       
     </div>
