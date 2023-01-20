@@ -235,7 +235,7 @@ body::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-.button-primary {
+.main .bottom-container button {
   background-color: rgb(165, 255, 243);
   width: 12.5rem;
   min-height: 2.5rem;
@@ -243,6 +243,35 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 2px 2px 12px -2px black;
   color: #212121;
   border: none;
+}
+
+.main #account_form .input-group label {
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.main #account_form .input-group input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 225px;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #292929;
+  border-radius: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.38);
+}
+.main #account_form .input-group input:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+  outline: rgba(255, 255, 255, 0.6) solid 2px;
+  outline-offset: -2px;
+}
+
+.touched-input:not(:focus):invalid {
+  border-color: #ff3333 !important;
+}
+.touched-input:not(:focus):valid:required {
+  border-color: #339933 !important;
 }
 
 .main .footer, .main .bottom-container, .main #account_form .input-group, .main .top-container, .main .content-wrapper, .main, .image-sidebar {
@@ -333,7 +362,7 @@ body::-webkit-scrollbar-thumb {
   font-size: clamp(35px, 5.5vw, 64px);
 }
 .main h1 {
-  font-size: clamp(1.1rem, 3.8vw, 1.4rem);
+  font-size: 1.4rem;
 }
 .main #account_form {
   display: flex;
@@ -353,15 +382,6 @@ body::-webkit-scrollbar-thumb {
 }
 .main #account_form .input-group:nth-of-type(even) {
   width: max(241px, 100% - 273px);
-}
-.main #account_form label {
-  letter-spacing: 4px;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.6);
-}
-.main #account_form input {
-  width: 225px;
-  color: #212121;
 }
 .main .bottom-container {
   flex: 1;

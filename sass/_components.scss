@@ -1,6 +1,6 @@
 @use "./abstracts" as *;
 
-.button-primary {
+%button-primary {
   background-color: $primary;
   width: 12.5rem;
   min-height: 2.5rem;
@@ -8,4 +8,35 @@
   box-shadow: 2px 2px 12px -2px black;
   color: mix(white, black, 13%);
   border: none;
+}
+
+%form-label {
+  letter-spacing: 4px;
+  font-size: 0.8rem;
+  color: $font-med;
+}
+
+%form-input {
+  appearance: none;
+  width: $form-input-width;
+  color: $font-high;
+  background-color: mix(white, $background, 5%);
+  border-radius: 6px;
+  border: 2px solid $font-low;
+  
+  &:focus {
+    border-color: $font-med;
+    outline: $font-med solid 2px;
+    outline-offset: -2px;
+  }
+}
+
+.touched-input {
+  &:not(:focus):invalid {
+    border-color: mix(white, red, 20%) !important;
+  }  
+
+  &:not(:focus):valid:required {
+    border-color: mix(white, green, 20%) !important;
+  }
 }
